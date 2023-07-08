@@ -70,16 +70,6 @@ if __name__ == "__main__":
     # Read blocked words
     if os.path.exists(BLOCKED_WORDS_FILENAME):
         blocked_words = json.load(open(BLOCKED_WORDS_FILENAME))
-        new_blocked_words = []
-        for w in blocked_words:
-            if len(w) <= 1:
-                continue
-            if w.isascii():
-                continue
-            new_blocked_words.append(w)
-        print(f"#blocked_words: {len(blocked_words)}")
-        print(f"#new_blocked_words: {len(new_blocked_words)}")
-        blocked_words = new_blocked_words
 
     # Count frequency
     for conv in convs:
